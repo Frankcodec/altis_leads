@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { 
-  ArrowUpRight, Zap, MousePointerClick, Layout, ShieldCheck, Smartphone, Monitor, Activity 
+  ArrowUpRight, Zap, MousePointerClick, Layout, ShieldCheck, Smartphone, Monitor, Activity, Star
 } from 'lucide-react';
 
 const SERVICES = [
@@ -47,14 +47,24 @@ const ServicesSection = () => {
     <section className="relative py-20 md:py-32 bg-[#FCFCFC] overflow-hidden">
       {/* Background Grid Pattern */}
       <div 
-        className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" 
+        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
         style={{ 
           backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`, 
           backgroundSize: '32px 32px' 
         }} 
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        {/* Services Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex mx-auto items-center gap-2 px-4 py-2 rounded-full border border-dashed border-gray-300 bg-white/50 text-sm font-medium text-gray-600 mb-8"
+        >
+          <Star className="w-3 h-3 text-orange-500 fill-orange-500" />
+          <span className="tracking-tight">Services</span>
+        </motion.div>
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
@@ -74,10 +84,10 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`bg-[#141414] rounded-[32px] p-8 md:p-10 flex flex-col justify-between min-h-[360px] ${service.className}`}
+              className={`bg-[#141414] rounded-[22px] p-8 md:p-7 flex flex-col justify-between min-h-[360px] ${service.className}`}
             >
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">
+                <h3 className="text-2xl md:text-2xl font-semibold text-white mb-4 tracking-tight">
                   {service.title}
                 </h3>
                 <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-8">

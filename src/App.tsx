@@ -4,6 +4,7 @@ import Hero from './Hero'
 import PortfolioSection from './Portfoliosection'
 import AboutSection from './AboutSection'
 import ServicesSection from './ServicesSection'
+import ProcessSection from './ProcessSection'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <PortfolioSection />
       <AboutSection />
       <ServicesSection />
+      <ProcessSection />
       <Footer />
     </>
   )
