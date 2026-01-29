@@ -4,6 +4,10 @@ import Hero from './Hero'
 import PortfolioSection from './Portfoliosection'
 import AboutSection from './AboutSection'
 import ServicesSection from './ServicesSection'
+import CTASection from './CTASection'
+import FAQSection from './FAQSection'
+import ReviewsSection from './ReviewsSection'
+import Plans from './Plans'
 
 function App() {
 
@@ -14,6 +18,10 @@ function App() {
       <PortfolioSection />
       <AboutSection />
       <ServicesSection />
+      <Plans />
+      <ReviewsSection/>
+      <FAQSection/>
+      <CTASection/>
       <Footer />
     </>
   )
