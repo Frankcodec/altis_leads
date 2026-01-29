@@ -17,6 +17,62 @@ const Plans: React.FC = () => {
         75% { transform: translate(-20px, 10px); }
         100% { transform: translate(0, 0); }
       }
+
+      /* Responsive Media Queries */
+      @media (max-width: 1024px) {
+        .pricing-cards {
+          grid-template-columns: 1fr !important;
+          max-width: 600px !important;
+        }
+        .custom-plan-content {
+          grid-template-columns: 1fr !important;
+          gap: 30px !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .pricing-title {
+          font-size: 38px !important;
+        }
+        .pricing-cards {
+          max-width: 100% !important;
+          padding: 0 16px !important;
+        }
+        .pricing-card {
+          padding: 20px 18px !important;
+        }
+        .card-top-section {
+          padding: 16px 16px !important;
+        }
+        .custom-plan-card {
+          padding: 28px 24px !important;
+          margin: 0 16px !important;
+        }
+        .price {
+          font-size: 32px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .pricing-title {
+          font-size: 32px !important;
+        }
+        .pricing-subtitle {
+          font-size: 14px !important;
+        }
+        .price {
+          font-size: 28px !important;
+        }
+        .plan-name {
+          font-size: 18px !important;
+        }
+        .pricing-card {
+          padding: 18px 16px !important;
+        }
+        .custom-plan-card {
+          padding: 24px 20px !important;
+        }
+      }
     `;
     document.head.appendChild(styleSheet);
     return () => {
@@ -44,133 +100,151 @@ const Plans: React.FC = () => {
     pricingContainer: {
       minHeight: '100vh',
       backgroundColor: '#f5f5f5',
-      padding: '80px 20px',
+      padding: '60px 20px',
       fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif',
     } as React.CSSProperties,
 
     pricingHeader: {
       textAlign: 'center' as const,
-      marginBottom: '60px',
+      marginBottom: '50px',
     } as React.CSSProperties,
 
     pricingLabel: {
       color: '#ff5722',
-      fontSize: '14px',
+      fontSize: '13px',
       fontWeight: 500,
       display: 'inline-block',
-      marginBottom: '16px',
+      marginBottom: '12px',
     } as React.CSSProperties,
 
     pricingTitle: {
-      fontSize: '64px',
+      fontSize: '52px',
       fontWeight: 600,
       color: '#1a1a1a',
-      marginBottom: '16px',
+      marginBottom: '12px',
       letterSpacing: '-1px',
     } as React.CSSProperties,
 
     pricingSubtitle: {
-      fontSize: '18px',
+      fontSize: '16px',
       color: '#666',
       lineHeight: '1.6',
     } as React.CSSProperties,
 
     pricingCards: {
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-      gap: '30px',
-      maxWidth: '1200px',
-      margin: '0 auto 40px',
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '24px',
+      maxWidth: '1000px',
+      margin: '0 auto 32px',
+      padding: '0 20px',
     } as React.CSSProperties,
 
     pricingCard: {
       backgroundColor: 'white',
-      borderRadius: '24px',
-      padding: '48px 40px',
+      borderRadius: '20px',
+      padding: '32px 28px',
       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
       transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+      overflow: 'visible',
+    } as React.CSSProperties,
+
+    cardTopSection: {
+      backgroundColor: '#fafafa',
+      padding: '20px 20px',
+      borderRadius: '16px',
+      border: '1px dashed #d0d0d0',
+      marginBottom: '24px',
+    } as React.CSSProperties,
+
+    cardBottomSection: {
+      padding: '0',
+      backgroundColor: 'transparent',
     } as React.CSSProperties,
 
     cardHeader: {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: '24px',
+      marginBottom: '20px',
     } as React.CSSProperties,
 
     planName: {
-      fontSize: '24px',
+      fontSize: '20px',
       fontWeight: 500,
       color: '#1a1a1a',
+      margin: 0,
     } as React.CSSProperties,
 
     popularBadge: {
       backgroundColor: '#ff5722',
       color: 'white',
-      padding: '6px 16px',
-      borderRadius: '20px',
-      fontSize: '14px',
+      padding: '5px 14px',
+      borderRadius: '18px',
+      fontSize: '13px',
       fontWeight: 500,
     } as React.CSSProperties,
 
     priceSection: {
-      marginBottom: '16px',
+      marginBottom: '12px',
     } as React.CSSProperties,
 
     price: {
-      fontSize: '56px',
+      fontSize: '44px',
       fontWeight: 600,
       color: '#1a1a1a',
-      letterSpacing: '-2px',
+      letterSpacing: '-1.5px',
     } as React.CSSProperties,
 
     pricePeriod: {
-      fontSize: '16px',
+      fontSize: '14px',
       color: '#666',
-      marginLeft: '8px',
+      marginLeft: '6px',
     } as React.CSSProperties,
 
     planDescription: {
-      fontSize: '16px',
+      fontSize: '14px',
       color: '#666',
-      marginBottom: '32px',
+      marginBottom: '24px',
       lineHeight: '1.5',
+      margin: '0 0 24px 0',
     } as React.CSSProperties,
 
     ctaButton: {
       backgroundColor: '#1a1a1a',
       color: 'white',
       border: 'none',
-      padding: '16px 32px',
+      padding: '13px 28px',
       borderRadius: '50px',
-      fontSize: '16px',
+      fontSize: '15px',
       fontWeight: 500,
       cursor: 'pointer',
       display: 'inline-flex',
       alignItems: 'center',
       gap: '8px',
       transition: 'background-color 0.3s ease, transform 0.2s ease',
-      marginBottom: '40px',
+      marginBottom: '0',
     } as React.CSSProperties,
 
     featuresTitle: {
-      fontSize: '16px',
+      fontSize: '15px',
       fontWeight: 500,
       color: '#1a1a1a',
-      marginBottom: '20px',
+      marginBottom: '16px',
+      margin: '0 0 16px 0',
     } as React.CSSProperties,
 
     featuresList: {
       listStyle: 'none',
       display: 'flex',
       flexDirection: 'column' as const,
-      gap: '16px',
+      gap: '12px',
       padding: 0,
       margin: 0,
     } as React.CSSProperties,
 
     featuresListItem: {
-      fontSize: '16px',
+      fontSize: '14px',
       color: '#666',
       display: 'flex',
       alignItems: 'center',
@@ -178,10 +252,12 @@ const Plans: React.FC = () => {
 
     customPlanCard: {
       background: '#1a1a1a',
-      borderRadius: '24px',
-      padding: '48px 40px',
-      maxWidth: '1200px',
-      margin: '0 auto',
+      borderRadius: '20px',
+      padding: '36px 32px',
+      maxWidth: '1000px',
+      margin: '0 20px',
+      marginLeft: 'auto',
+      marginRight: 'auto',
       position: 'relative' as const,
       overflow: 'hidden',
     } as React.CSSProperties,
@@ -189,7 +265,7 @@ const Plans: React.FC = () => {
     customPlanContent: {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
-      gap: '60px',
+      gap: '50px',
       position: 'relative' as const,
       zIndex: 2,
     } as React.CSSProperties,
@@ -200,46 +276,49 @@ const Plans: React.FC = () => {
     } as React.CSSProperties,
 
     customPlanName: {
-      fontSize: '24px',
+      fontSize: '20px',
       fontWeight: 500,
       color: 'white',
-      marginBottom: '24px',
+      marginBottom: '20px',
+      margin: '0 0 20px 0',
     } as React.CSSProperties,
 
     customPrice: {
-      fontSize: '56px',
+      fontSize: '44px',
       fontWeight: 600,
       color: 'white',
-      letterSpacing: '-2px',
+      letterSpacing: '-1.5px',
     } as React.CSSProperties,
 
     customPricePeriod: {
-      fontSize: '16px',
+      fontSize: '14px',
       color: '#999',
-      marginLeft: '8px',
+      marginLeft: '6px',
     } as React.CSSProperties,
 
     customPlanDescription: {
-      fontSize: '16px',
+      fontSize: '14px',
       color: '#ccc',
-      marginBottom: '32px',
+      marginBottom: '24px',
       lineHeight: '1.5',
+      margin: '0 0 24px 0',
     } as React.CSSProperties,
 
     ctaButtonWhite: {
       backgroundColor: 'white',
       color: '#1a1a1a',
       border: 'none',
-      padding: '16px 32px',
+      padding: '13px 28px',
       borderRadius: '50px',
-      fontSize: '16px',
+      fontSize: '15px',
       fontWeight: 500,
       cursor: 'pointer',
       display: 'inline-flex',
       alignItems: 'center',
       gap: '8px',
       transition: 'background-color 0.3s ease, transform 0.2s ease',
-      marginBottom: '40px',
+      marginBottom: '0',
+      width: 'fit-content',
     } as React.CSSProperties,
 
     customPlanRight: {
@@ -248,14 +327,15 @@ const Plans: React.FC = () => {
     } as React.CSSProperties,
 
     customFeaturesTitle: {
-      fontSize: '16px',
+      fontSize: '15px',
       fontWeight: 500,
       color: 'white',
-      marginBottom: '20px',
+      marginBottom: '16px',
+      margin: '0 0 16px 0',
     } as React.CSSProperties,
 
     customFeaturesListItem: {
-      fontSize: '16px',
+      fontSize: '14px',
       color: '#ccc',
       display: 'flex',
       alignItems: 'center',
@@ -263,18 +343,18 @@ const Plans: React.FC = () => {
 
     decorativeDots: {
       position: 'absolute' as const,
-      bottom: '40px',
-      right: '60px',
+      bottom: '32px',
+      right: '50px',
       display: 'grid',
       gridTemplateColumns: 'repeat(3, 1fr)',
-      gap: '12px',
+      gap: '10px',
       opacity: 0.3,
       zIndex: 1,
     } as React.CSSProperties,
 
     dot: {
-      width: '6px',
-      height: '6px',
+      width: '5px',
+      height: '5px',
       backgroundColor: 'white',
       borderRadius: '50%',
       animation: 'float 3s ease-in-out infinite',
@@ -293,8 +373,8 @@ const Plans: React.FC = () => {
 
     floatingDot: {
       position: 'absolute' as const,
-      width: '4px',
-      height: '4px',
+      width: '3px',
+      height: '3px',
       backgroundColor: 'white',
       borderRadius: '50%',
       opacity: 0.4,
@@ -305,34 +385,36 @@ const Plans: React.FC = () => {
     <div style={styles.pricingContainer}>
       <div style={styles.pricingHeader}>
         <span style={styles.pricingLabel}>✦ Pricing</span>
-        <h1 style={styles.pricingTitle}> Plans</h1>
-        <p style={styles.pricingSubtitle}>
+        <h1 style={styles.pricingTitle} className="pricing-title">Simple Plans</h1>
+        <p style={styles.pricingSubtitle} className="pricing-subtitle">
           Whether you're uploading weekly or scaling fast, we've got a plan
           <br />
           tailored to your content flow.
         </p>
       </div>
 
-      <div style={styles.pricingCards}>
+      <div style={styles.pricingCards} className="pricing-cards">
         {/* Landing Page Plan */}
-        <div style={styles.pricingCard}>
-          <div style={styles.cardHeader}>
-            <h3 style={styles.planName}>Landing Page</h3>
+        <div style={styles.pricingCard} className="pricing-card">
+          <div style={styles.cardTopSection} className="card-top-section">
+            <div style={styles.cardHeader}>
+              <h3 style={styles.planName} className="plan-name">Landing Page</h3>
+            </div>
+            <div style={styles.priceSection}>
+              <span style={styles.price} className="price">$1000</span>
+              <span style={styles.pricePeriod}>/one time payment</span>
+            </div>
+            <p style={styles.planDescription}>Convert visitors into leads or customers.</p>
+            
+            <button style={styles.ctaButton}>
+              Book a Call
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
-          <div style={styles.priceSection}>
-            <span style={styles.price}>$1000</span>
-            <span style={styles.pricePeriod}>/one time payment</span>
-          </div>
-          <p style={styles.planDescription}>Convert visitors into leads or customers.</p>
-          
-          <button style={styles.ctaButton}>
-            Book a Call
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
 
-          <div>
+          <div style={styles.cardBottomSection}>
             <h4 style={styles.featuresTitle}>Features included:</h4>
             <ul style={styles.featuresList}>
               <li style={styles.featuresListItem}>✦ Single page</li>
@@ -345,25 +427,27 @@ const Plans: React.FC = () => {
         </div>
 
         {/* Multi-Page Plan */}
-        <div style={styles.pricingCard}>
-          <div style={styles.cardHeader}>
-            <h3 style={styles.planName}>Multi-Page</h3>
-            <span style={styles.popularBadge}>Popular</span>
+        <div style={styles.pricingCard} className="pricing-card">
+          <div style={styles.cardTopSection} className="card-top-section">
+            <div style={styles.cardHeader}>
+              <h3 style={styles.planName} className="plan-name">Multi-Page</h3>
+              <span style={styles.popularBadge}>Popular</span>
+            </div>
+            <div style={styles.priceSection}>
+              <span style={styles.price} className="price">$1800</span>
+              <span style={styles.pricePeriod}>/one time payment</span>
+            </div>
+            <p style={styles.planDescription}>Build trust, brand presence, and scalability.</p>
+            
+            <button style={styles.ctaButton}>
+              Book a Call
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
-          <div style={styles.priceSection}>
-            <span style={styles.price}>$1800</span>
-            <span style={styles.pricePeriod}>/one time payment</span>
-          </div>
-          <p style={styles.planDescription}>Build trust, brand presence, and scalability.</p>
-          
-          <button style={styles.ctaButton}>
-            Book a Call
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
 
-          <div>
+          <div style={styles.cardBottomSection}>
             <h4 style={styles.featuresTitle}>Features included:</h4>
             <ul style={styles.featuresList}>
               <li style={styles.featuresListItem}>✦ Multiple Pages</li>
@@ -377,7 +461,7 @@ const Plans: React.FC = () => {
       </div>
 
       {/* Custom Plan */}
-      <div style={styles.customPlanCard}>
+      <div style={styles.customPlanCard} className="custom-plan-card">
         {/* Floating animated dots */}
         <div style={styles.floatingDotsContainer}>
           {floatingDots.map((dot) => (
@@ -396,11 +480,11 @@ const Plans: React.FC = () => {
           ))}
         </div>
 
-        <div style={styles.customPlanContent}>
+        <div style={styles.customPlanContent} className="custom-plan-content">
           <div style={styles.customPlanLeft}>
             <h3 style={styles.customPlanName}>Custom Plan</h3>
             <div style={styles.priceSection}>
-              <span style={styles.customPrice}>???</span>
+              <span style={styles.customPrice} className="price">???</span>
               <span style={styles.customPricePeriod}>/one time payment</span>
             </div>
             <p style={styles.customPlanDescription}>Fully tailored digital experience.</p>
