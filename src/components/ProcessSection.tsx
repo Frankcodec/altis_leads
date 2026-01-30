@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import DevStatusComponent from './Bento';
-import LaunchSupportCard from './Bento1';
-import DesignCard from './Bento2';
-import IntegrationPipeline from './Bento3';
+import DevStatusComponent from './components/Bento';
+import LaunchSupportCard from './components/Bento1';
+import DesignCard from './components/Bento2';
+import IntegrationPipeline from './components/Bento3';
+import { Star } from 'lucide-react';
 
 const STEPS = [
   {
@@ -45,6 +46,16 @@ const ProcessSection = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Header Section */}
+        <motion.div
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  /* Added w-fit to wrap the text and mx-auto to center it */
+  className="w-fit mx-auto flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-gray-300 bg-white/50 text-sm font-medium text-gray-600 mb-8"
+>
+  <Star className="w-3 h-3 text-orange-500 fill-orange-500" />
+  <span className="tracking-tight">Plans</span>
+</motion.div>
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6 tracking-tight">
             How It Works?

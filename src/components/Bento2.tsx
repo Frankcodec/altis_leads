@@ -5,7 +5,7 @@ const DesignCard = () => {
   const particles = Array.from({ length: 15 });
 
   return (
-    <div className="relative h-full w-full rounded-[3rem] overflow-hidden flex items-center justify-center border border-white/5 shadow-2xl">
+    <div className="relative h-full w-full rounded-[3rem] overflow-hidden flex items-center justify-center ">
       
       {/* 1. Generative "Noise" Background */}
       <div className="absolute inset-0 z-0">
@@ -69,10 +69,7 @@ const DesignCard = () => {
         <span className="text-[10px] text-white font-mono uppercase tracking-[0.3em]">Core Engine</span>
       </div>
 
-      <div className="absolute bottom-8 right-8 text-right">
-        <p className="text-[#FF5100] text-3xl font-mono leading-none">03</p>
-        <p className="text-white/30 text-[9px] font-mono uppercase">Global Tokens</p>
-      </div>
+      
 
       {/* Tailwind Style for Hollow Text */}
       <style >{`

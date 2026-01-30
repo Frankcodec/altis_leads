@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Sparkles, ArrowUpRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 
 
