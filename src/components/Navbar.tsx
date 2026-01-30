@@ -52,6 +52,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <div className="flex items-center gap-4">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=altis.studios01@gmail.com" target="_blank" rel="noopener noreferrer">
           <button className={`hidden lg:flex pl-6 pr-2 py-1.5 rounded-full items-center gap-4 transition-all group text-sm font-medium ${
             scrolled 
               ? "bg-neutral-900 text-white" 
@@ -64,8 +65,10 @@ const Navbar = () => {
               <ArrowUpRight className="w-4 h-4" />
             </div>
           </button>
-
-          <button 
+          </a>
+          
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=altis.studios01@gmail.com" target="_blank" rel="noopener noreferrer">
+           <button 
             onClick={() => setIsOpen(!isOpen)}
             className={`lg:hidden p-2 rounded-xl transition-colors ${
               scrolled ? "bg-neutral-900 text-white" : "bg-white text-neutral-900 shadow-md"
@@ -73,6 +76,8 @@ const Navbar = () => {
           >
             {isOpen ? <X size={24} /> : <List size={24} />}
           </button>
+          </a>
+         
         </div>
       </div>
 

@@ -105,8 +105,18 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full px-4 py-16 md:py-20 bg-gray-50">
-      <div className="max-w-5xl mx-auto">
+    <section className="w-full px-4 py-16 md:py-20 bg-white relative">
+      {/* Grid Background */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          opacity: 0.03,
+          backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+          backgroundSize: '32px 32px'
+        }}
+      />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Side - Title */}
           <div className="lg:sticky lg:top-8">
@@ -130,7 +140,7 @@ const FAQSection: React.FC = () => {
                 className={`relative rounded-2xl overflow-hidden transition-all duration-300 ${
                   openIndex === index
                     ? 'bg-[#1a1a1a] text-white'
-                    : 'bg-white text-black hover:bg-gray-50'
+                    : "bg-white border border-dashed border-[#d0d0d0] text-black hover:bg-gray-50"
                 }`}
               >
                 {/* Animated particles for open card */}

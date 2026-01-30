@@ -106,8 +106,18 @@ const ReviewsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full px-4 py-12 md:py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full px-4 py-12 md:py-16 bg-white relative">
+      {/* Grid Background */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          opacity: 0.03,
+          backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+          backgroundSize: '32px 32px'
+        }}
+      />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -171,6 +181,8 @@ const ReviewsSection: React.FC = () => {
                 </h3>
 
                 {/* CTA Button */}
+                <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
+
                 <button className="group flex items-center gap-2.5 bg-white hover:bg-gray-100 text-black text-base font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl mb-8">
                   Book a Call
                   <span className="flex items-center justify-center w-8 h-8 bg-[#FF5100] rounded-full transition-transform group-hover:translate-x-1">
@@ -189,6 +201,9 @@ const ReviewsSection: React.FC = () => {
                     </svg>
                   </span>
                 </button>
+                
+                </a>
+                
 
                 {/* Email */}
                 <div className="mb-6">

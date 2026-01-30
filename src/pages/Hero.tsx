@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 
 const Hero = () => {
   return (
@@ -60,12 +60,15 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col items-center lg:items-start gap-4">
-              <button className="bg-neutral-900 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-8 hover:bg-neutral-800 transition-all shadow-2xl group">
+              <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
+               <button className="bg-neutral-900 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-8 hover:bg-neutral-800 transition-all shadow-2xl group">
                 <span className="text-xl font-medium">Book a Call</span>
                 <div className="bg-white rounded-full p-3 group-hover:rotate-45 transition-transform duration-300">
                   <ArrowUpRight className="w-6 h-6 text-black" />
                 </div>
               </button>
+              </a>
+             
               <p className="text-gray-400 text-sm ml-4 font-medium uppercase tracking-widest">Let's talk strategy</p>
             </div>
           </div>

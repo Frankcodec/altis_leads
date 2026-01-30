@@ -19,15 +19,14 @@ const CTASection: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
     const updateCanvasSize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     };
+
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
-    // Create particles
     const particles: Particle[] = [];
     const particleCount = 80;
 
@@ -38,26 +37,22 @@ const CTASection: React.FC = () => {
         size: Math.random() * 2 + 0.5,
         speedX: (Math.random() - 0.5) * 0.3,
         speedY: (Math.random() - 0.5) * 0.3,
-        opacity: Math.random() * 0.4 + 0.1
+        opacity: Math.random() * 0.4 + 0.1,
       });
     }
 
-    // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach(particle => {
-        // Update position
+      particles.forEach((particle) => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
 
-        // Wrap around edges
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.x > canvas.width) particle.x = 0;
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
@@ -75,10 +70,21 @@ const CTASection: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full px-4 py-16 bg-gray-100">
-      <div className="max-w-5xl mx-auto">
+    <section className="relative w-full px-4 py-16 bg-white overflow-hidden">
+      {/* Grid Background */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{
+          opacity: 0.03,
+          backgroundImage:
+            'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="relative bg-[#1a1a1a] rounded-[2rem] px-8 py-16 md:py-20 overflow-hidden">
-          {/* Animated particles canvas */}
+          {/* Animated particles */}
           <canvas
             ref={canvasRef}
             className="absolute inset-0 pointer-events-none"
@@ -87,59 +93,58 @@ const CTASection: React.FC = () => {
 
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center text-center">
-            {/* Heading */}
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Ready to Level Up?
             </h2>
 
-            {/* Description */}
             <p className="text-gray-300 text-lg md:text-xl max-w-3xl mb-12 leading-relaxed">
-              From targeted feature sprints to full-scale digital transformations, Altis<br className="hidden md:block" />
-              is ready when you are. Let's build something exceptional.
+              From targeted feature sprints to full-scale digital transformations,
+              Altis is ready when you are. Let&apos;s build something exceptional.
             </p>
 
-            {/* Main CTA Button */}
-            <button className="group flex items-center gap-3 bg-white hover:bg-gray-100 text-black text-lg font-medium px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl mb-16">
+            {/* Main CTA */}
+            <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
+               <button className="group flex items-center gap-3 bg-white hover:bg-gray-100 text-black text-lg font-medium px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl mb-16">
               Book a Call
               <span className="flex items-center justify-center w-10 h-10 bg-[#FF5100] rounded-full transition-transform group-hover:translate-x-1">
-                <svg 
-                  className="w-5 h-5 text-white" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2.5} 
-                    d="M9 5l7 7-7 7" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M9 5l7 7-7 7"
                   />
                 </svg>
               </span>
             </button>
+            </a>
+           
 
             {/* Bottom Pills */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 lg:gap-32 w-full max-w-4xl">
-              {/* Left Pill with top-left label */}
               <div className="relative">
-                <span className="absolute -top-8 -left-4 text-gray-400 text-sm font-light italic -rotate-12 whitespace-nowrap">
-                  From meh to wow!
+                <span className="absolute -top-8 -left-8 text-gray-400 text-sm font-light italic -rotate-12 whitespace-nowrap">
+                  Build Better
                 </span>
-                <button className="bg-[#FF5100] hover:bg-[#ff6a2e] text-white text-base font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap">
-                  No Editor? No Problem
+                <button className="bg-[#FF5100] hover:bg-[#ff6a2e] text-white text-base font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+                  Where brands evolve
                 </button>
               </div>
 
-              {/* Right Pill with top-right and bottom-right labels */}
               <div className="relative">
                 <span className="absolute -top-8 -right-2 text-gray-400 text-sm font-light italic rotate-12 whitespace-nowrap">
-                  Watch Time Wins
+                  Stand Out
                 </span>
-                <button className="bg-[#FF5100] hover:bg-[#ff6a2e] text-white text-base font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap">
-                  Conversion Boost
+                <button className="bg-[#FF5100] hover:bg-[#ff6a2e] text-white text-base font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+                  Modern. Clean. Powerful.
                 </button>
-                <span className="absolute -bottom-8 -right-4 text-gray-400 text-sm font-light italic rotate-6 whitespace-nowrap">
-                  Low Views? Fixed
+                <span className="absolute -bottom-8 -right-36 text-gray-400 text-sm font-light italic rotate-6 whitespace-nowrap">
+                  Upgrade Now
                 </span>
               </div>
             </div>

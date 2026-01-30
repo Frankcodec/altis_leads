@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import DevStatusComponent from './components/Bento';
-import LaunchSupportCard from './components/Bento1';
-import DesignCard from './components/Bento2';
-import IntegrationPipeline from './components/Bento3';
+import DevStatusComponent from './Bento';
+import LaunchSupportCard from './Bento1';
+import DesignCard from './Bento2';
+import IntegrationPipeline from './Bento3';
 
 const STEPS = [
   {
