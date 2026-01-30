@@ -77,7 +77,7 @@ const Navbar = () => {
           >
             {isOpen ? <X size={24} /> : <List size={24} />}
           </button>
-          </a>
+          
          
         </div>
       </div>

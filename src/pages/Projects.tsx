@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
-import Footer from './Footer';
-import PortfolioSection from './Portfoliosection';
-import FAQSection from './FAQSection';
+import Footer from '../components/Footer';
+import PortfolioSection from '../components/Portfoliosection';
+import FAQSection from '../components/FAQSection';
 
 const WorksHeader = () => {
   return (

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './/Navbar';
-import Home from './Home';
-import WorksHeader from './Projects';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import WorksHeader from './pages/Projects';
 // Import other pages as needed
 
 function App() {
