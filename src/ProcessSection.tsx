@@ -1,29 +1,33 @@
 import { motion } from 'framer-motion';
+import DevStatusComponent from './components/Bento';
+import LaunchSupportCard from './components/Bento1';
+import DesignCard from './components/Bento2';
+import IntegrationPipeline from './components/Bento3';
 
 const STEPS = [
   {
     number: "01",
     title: "Discovery",
     description: "We start by understanding your goals, audience, and vision. This allows us to define a clear direction before any design or development begins.",
-    image: "/image.png", // Replace with your actual image path
+    component: <IntegrationPipeline />
   },
   {
     number: "02",
     title: "Design",
     description: "We craft thoughtful, modern designs focused on clarity, usability, and visual impact — tailored to your brand.",
-    image: "/image2.png",
+    component: <DesignCard />
   },
   {
     number: "03",
     title: "Development",
     description: "We bring the designs to life with clean, scalable code, ensuring performance, responsiveness, and reliability across all devices.",
-    image: "/process-dev.png",
+    component: <DevStatusComponent />
   },
   {
     number: "04",
     title: "Launch & Support",
     description: "We handle a smooth, stress-free launch, ensuring everything works perfectly across devices and platforms.",
-    image: "/process-launch.png",
+    component: <LaunchSupportCard />
   }
 ];
 
@@ -51,7 +55,7 @@ const ProcessSection = () => {
         </div>
 
         {/* Process Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-4">
           {STEPS.map((step, index) => (
             <motion.div
               key={index}
@@ -62,21 +66,23 @@ const ProcessSection = () => {
               className="group"
             >
               {/* Card Container */}
-              <div className="bg-[#F8F8F8] border border-gray-100 rounded-[32px] p-2 flex flex-col h-full hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-500">
+              <div className="bg-white border border-gray-100 rounded-[22px] p-2 flex flex-col h-full hover:shadow-xl hover:shadow-gray-200/50 shadow-lg transition-all duration-500">
                 
                 {/* Illustration Area */}
-                <div className="relative aspect-[7/4] rounded-[26px] bg-white overflow-hidden flex items-center justify-center p-6 mb-6">
+                <div className="relative aspect-[7/4] rounded-[26px] bg-white overflow-hidden flex items-center justify-center p-0 md:p-0 mb-6">
                   {/* Step Number Badge */}
-                  <div className="absolute top-4 left-4 bg-white border border-gray-100 rounded-xl px-3 py-1 text-sm font-bold text-gray-400 shadow-sm">
+                  <div className="absolute z-50 top-4 left-4 bg-white border border-gray-100 rounded-xl px-3 py-2 text-sm font-bold text-gray-400 shadow-sm">
                     {step.number}
                   </div>
                   
                   {/* Illustration placeholder */}
-                  <img 
-                    src={step.image} 
+
+                  {!step.component ? <img 
+                    src={step.component} 
                     alt={step.title}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out"
-                  />
+                  /> : step.component }
+                  
                 </div>
 
                 {/* Content Area */}

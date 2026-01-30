@@ -24,7 +24,7 @@ const Hero = () => {
 
       <Navbar />
 
-      <main className="relative z-10 max-w-7xl mx-auto px-6 pt-12 lg:pt-24">
+      <main className="relative mt-10 z-10 max-w-7xl mx-auto px-6 pt-12 lg:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
           
           {/* Text Content - Takes up 8/12 columns on desktop */}
