@@ -1,36 +1,23 @@
-import './App.css'
-
-import Footer from './components/Footer'
-import Hero from './pages/Hero'
-import PortfolioSection from './components/Portfoliosection'
-import AboutSection from './pages/AboutSection'
-import ServicesSection from './components/ServicesSection'
-import ProcessSection from './components/ProcessSection'
-import Plans from './components/Plans'
-import ReviewsSection from './components/ReviewsSection'
-import FAQSection from './components/FAQSection'
-import CTASection from './components/CTASection'
-import ContactForm from './pages/ContactForm'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './/Navbar';
+import Home from './Home';
+import WorksHeader from './Projects';
+// Import other pages as needed
 
 function App() {
   return (
-    <>
-    <ContactForm />
-      <Hero />
-      <PortfolioSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProcessSection />
-      <Plans />
-      <ReviewsSection />
-      <FAQSection />
-      <CTASection />
-      <Footer />
-    </>
-  )
+    <Router>
+      <div className="min-h-screen bg-[#FCFCFC]">
+        <Navbar />
+        {/* The Routes determine which component to render based on the URL */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/works" element={<WorksHeader />} />
+          {/* Add more routes here */}
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
-
-
-
+export default App;

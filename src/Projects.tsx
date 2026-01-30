@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
-import Navbar from './Navbar';
 import Footer from './Footer';
 import PortfolioSection from './Portfoliosection';
 import FAQSection from './FAQSection';
@@ -8,7 +7,6 @@ import FAQSection from './FAQSection';
 const WorksHeader = () => {
   return (
     <>
-        <Navbar />
         <section className="relative pt-24 pb-12 bg-white overflow-hidden">
       {/* 1. Consistent Grid Background */}
       <div 

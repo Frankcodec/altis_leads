@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
-import Navbar from '../components/Navbar';
 
 const Hero = () => {
   return (
@@ -22,7 +21,6 @@ const Hero = () => {
            style={{ backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`, 
            backgroundSize: '32px 32px' }} />
 
-      <Navbar />
 
       <main className="relative mt-10 z-10 max-w-7xl mx-auto px-6 pt-12 lg:pt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
