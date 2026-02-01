@@ -94,7 +94,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] px-5 py-10">
+    <div className="min-h-screen bg-[#fafafa] px-6 py-20">
       <div className="max-w-[840px] mx-auto mb-16">
         <button className="text-[#ff5722] text-[15px] font-normal bg-transparent border-none cursor-pointer p-0 tracking-wide">
           + Contact

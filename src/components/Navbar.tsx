@@ -17,10 +17,9 @@ const Navbar = () => {
 
   // Helper to determine link pathing
   const navLinks = [
-    { name: 'Services', path: '/#services' },
-    { name: 'Process', path: '/#process' },
+    { name: 'Home', path: '/' },
     { name: 'Works', path: '/works' },
-    { name: 'Pricing', path: '/#pricing' },
+    { name: 'Contact', path: '/contact' }
   ];
 
   return (

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import WorksHeader from './pages/Projects';
+import ContactForm from './pages/ContactForm';
 // Import other pages as needed
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/works" element={<WorksHeader />} />
+          <Route path="/contact" element={<ContactForm />} />
           {/* Add more routes here */}
         </Routes>
       </div>
