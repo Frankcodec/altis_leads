@@ -13,10 +13,10 @@ const LaunchSupportCard = () => {
         <div className="z-10">
           <div className="flex items-center gap-2 mb-2">
             <Rocket size={16} className="text-[#FF5100]" />
-            <span className="text-[#FF5100] font-bold text-[10px] tracking-[0.2em] uppercase">Production</span>
+            <span className="text-[#FF5100] font-bold text-[10px] tracking-[0.2em] uppercase">Follow-up</span>
           </div>
           <h3 className="text-3xl font-black font-light text-slate-900 leading-none">
-            Launch <br /> Sequence
+            Outreach <br /> Sequence
           </h3>
         </div>
 
@@ -58,8 +58,8 @@ const LaunchSupportCard = () => {
         </div>
         
         <div className="mt-4 pt-4 border-t border-slate-50 flex justify-between items-center">
-            <span className="text-[10px] text-slate-400 font-mono">0.0ms Latency</span>
-            <span className="text-[10px] text-slate-400 font-mono">100% Uptime</span>
+            <span className="text-[10px] text-slate-400 font-mono">Clear priorities</span>
+            <span className="text-[10px] text-slate-400 font-mono">Thoughtful timing</span>
         </div>
       </div>
     </div>

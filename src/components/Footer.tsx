@@ -1,22 +1,15 @@
 import React from 'react';
 
 export default function Footer() {
-  // Generate random positions for animated floating dots
-  const floatingDots = React.useMemo(() => {
-    const dots = [];
-    for (let i = 0; i < 30; i++) {
-      dots.push({
-        id: i,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDuration: `${5 + Math.random() * 10}s`,
-        animationDelay: `${Math.random() * 8}s`,
-        size: Math.random() > 0.5 ? '2px' : '3px',
-        opacity: 0.2 + Math.random() * 0.3,
-      });
-    }
-    return dots;
-  }, []);
+  const floatingDots = Array.from({ length: 30 }, (_, i) => ({
+    id: i,
+    top: `${(i * 37) % 100}%`,
+    left: `${(i * 61) % 100}%`,
+    animationDuration: `${5 + (i % 10)}s`,
+    animationDelay: `${i % 8}s`,
+    size: i % 2 === 0 ? '2px' : '3px',
+    opacity: 0.2 + (i % 4) * 0.1,
+  }));
 
   React.useEffect(() => {
     const styleSheet = document.createElement('style');
@@ -205,8 +198,7 @@ export default function Footer() {
 </div>
           </div>
           <p style={styles.description}>
-            Empowering startups to dominate their niche with high-fidelity design, custom
-            full-stack builds, and rapid deployment.
+            Helping local businesses identify realistic customer opportunities and build a practical way to reach them.
           </p>
         </div>
 
@@ -228,7 +220,7 @@ export default function Footer() {
               onMouseEnter={handleLinkHover}
               onMouseLeave={handleLinkLeave}
             >
-              Services
+              How It Works
             </a>
             <a
               href="#"
@@ -236,7 +228,7 @@ export default function Footer() {
               onMouseEnter={handleLinkHover}
               onMouseLeave={handleLinkLeave}
             >
-              Works
+              Opportunity Areas
             </a>
             <a
               href="#"
@@ -244,7 +236,7 @@ export default function Footer() {
               onMouseEnter={handleLinkHover}
               onMouseLeave={handleLinkLeave}
             >
-              Reviews
+              Practical Fit
             </a>
             <a
               href="#"

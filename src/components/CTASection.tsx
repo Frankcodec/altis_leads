@@ -94,18 +94,17 @@ const CTASection: React.FC = () => {
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Ready to Level Up?
+              Find a Better Path to Your Next Customers.
             </h2>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-3xl mb-12 leading-relaxed">
-              From targeted feature sprints to full-scale digital transformations,
-              Altis is ready when you are. Let&apos;s build something exceptional.
+              Tell us what your business offers, who you want to reach, and where customer acquisition feels stuck. We will start with the problem in front of you.
             </p>
 
             {/* Main CTA */}
             <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
                <button className="group flex items-center gap-3 bg-white hover:bg-gray-100 text-black text-lg font-medium px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl mb-16">
-              Book a Call
+              Let&apos;s Talk About Your Market
               <span className="flex items-center justify-center w-10 h-10 bg-[#FF5100] rounded-full transition-transform group-hover:translate-x-1">
                 <svg
                   className="w-5 h-5 text-white"
@@ -129,22 +128,22 @@ const CTASection: React.FC = () => {
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20 lg:gap-32 w-full max-w-4xl">
               <div className="relative">
                 <span className="absolute -top-8 -left-8 text-gray-400 text-sm font-light italic -rotate-12 whitespace-nowrap">
-                  Build Better
+                  Know Your Market
                 </span>
                 <button className="bg-[#FF5100] hover:bg-[#ff6a2e] text-white text-base font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Where brands evolve
+                  Find stronger fits
                 </button>
               </div>
 
               <div className="relative">
                 <span className="absolute -top-8 -right-2 text-gray-400 text-sm font-light italic rotate-12 whitespace-nowrap">
-                  Stand Out
+                  Make a plan
                 </span>
                 <button className="bg-[#FF5100] hover:bg-[#ff6a2e] text-white text-base font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Modern. Clean. Powerful.
+                  Approach with purpose
                 </button>
                 <span className="absolute -bottom-8 -right-36 text-gray-400 text-sm font-light italic rotate-6 whitespace-nowrap">
-                  Upgrade Now
+                  Start a conversation
                 </span>
               </div>
             </div>

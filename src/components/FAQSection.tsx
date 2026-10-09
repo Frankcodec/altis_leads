@@ -20,24 +20,24 @@ const FAQSection: React.FC = () => {
 
   const faqData: FAQItem[] = [
     {
-      question: "Does Altis only work in Framer, or do you handle custom builds?",
-      answer: "While we love Framer for high-performance marketing sites, we are Full-Stack Developers at heart. If your project requires a custom web app, specialized React components, or a robust backend, we build tailored solutions using modern stacks like Next.js, TypeScript, and Node.js. We choose the tool that best fits your business goals, not the other way around."
+      question: "What kinds of businesses is this for?",
+      answer: "The work is built for local businesses that have a useful service but want a more proactive way to find potential customers. That can include home services, contractors, property-related businesses, food businesses, professional services, and other growing local companies."
     },
     {
-      question: "Can you integrate custom APIs or third-party backend services?",
-      answer: "Yes, absolutely! We specialize in integrating custom APIs and third-party services to create seamless, powerful solutions for your business."
+      question: "Is this just a lead list?",
+      answer: "No. A contact list without context is rarely enough to create good conversations. The focus is on finding relevant opportunities, understanding why they may be a fit, and organizing a practical approach to reaching them."
     },
     {
-      question: "I have a complex Figma design. Can you code it from scratch?",
-      answer: "Definitely! We excel at translating complex Figma designs into pixel-perfect, production-ready code with clean architecture and best practices."
+      question: "Do you contact prospects for us?",
+      answer: "That depends on the engagement. Some businesses need research, priorities, and messaging they can use themselves; others may need more support with outreach and follow-up planning. We decide what is useful before defining the scope."
     },
     {
-      question: "How do you handle hosting, security, and scalability?",
-      answer: "We provide comprehensive hosting solutions with enterprise-grade security measures and scalable infrastructure to grow with your business."
+      question: "Can you help with our website or booking flow?",
+      answer: "Where a simple landing page or booking path would help turn interest into inquiries, that can be part of the conversation. It is not assumed that every business needs a new website or funnel."
     },
     {
-      question: "Can you build custom Framer components with code?",
-      answer: "Yes! We create custom Framer components with advanced functionality, animations, and interactions tailored to your specific needs."
+      question: "What should we bring to the first conversation?",
+      answer: "Share what you sell, who you would most like to work with, where you serve, and what has made customer acquisition difficult so far. A website or social page is helpful, but not required."
     }
   ];
 
@@ -124,11 +124,11 @@ const FAQSection: React.FC = () => {
               <span className="text-[#FF6B35]">✦</span>FAQ
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Got Questions?<br />
-              We Got Answers
+              Clear Questions.<br />
+              Practical Answers.
             </h2>
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-md">
-              Straightforward, no-fluff answers to help you feel confident about working with us.
+              Straightforward answers about the work, who it is for, and what happens next.
             </p>
           </div>
 

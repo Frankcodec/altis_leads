@@ -35,14 +35,14 @@ const Hero = () => {
               className="flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-gray-300 bg-white/50 text-sm font-medium text-gray-600 mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-green-500" />
-              Available for work
+              Helping local businesses grow
             </motion.div>
 
             {/* Headline */}
             <div className="relative mb-6">
               <h1 className="text-4xl md:text-7xl lg:text-[100px] font-bold tracking-tight text-neutral-900 leading-[1.05]">
-                Premium Website  <br />
-                That <span className="text-orange-500">Stand Out!</span>
+                Find the Customers <br />
+                Your Business Should <span className="text-orange-500">Reach.</span>
                 
               </h1>
 
@@ -53,21 +53,20 @@ const Hero = () => {
             </div>
 
             <p className="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed mb-10">
-              We design thoughtful websites and digital experiences for founders and companies, 
-              helping brands grow, engage their audience and stand out online.
+              I research your local market, identify businesses and people who are a strong fit for what you offer, and help you build a practical plan to turn those opportunities into new customers.
             </p>
 
             <div className="flex flex-col items-center lg:items-start gap-4">
               <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
                <button className="bg-neutral-900 text-white pl-8 pr-2 py-2 rounded-full flex items-center gap-8 hover:bg-neutral-800 transition-all shadow-2xl group">
-                <span className="text-xl font-medium">Book a Call</span>
+                <span className="text-xl font-medium">Let's Find Your Next Customers</span>
                 <div className="bg-white rounded-full p-3 group-hover:rotate-45 transition-transform duration-300">
                   <ArrowUpRight className="w-6 h-6 text-black" />
                 </div>
               </button>
               </a>
              
-              <p className="text-gray-400 text-sm ml-4 font-medium uppercase tracking-widest">Let's talk strategy</p>
+              <p className="text-gray-400 text-sm ml-4 font-medium uppercase tracking-widest">A practical place to start</p>
             </div>
           </div>
           

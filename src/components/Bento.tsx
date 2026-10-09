@@ -19,7 +19,7 @@ const DevStatusComponent = () => {
             <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User" />
           </div>
           <h2 className="text-2xl font-bold text-slate-800 tracking-tight">
-            Starting Development
+            Planning Follow-up
           </h2>
         </motion.div>
 
@@ -55,7 +55,7 @@ const DevStatusComponent = () => {
             className="bg-[#FF7043] px-8 py-3 rounded-2xl shadow-xl shadow-orange-200"
           >
             <p className="text-white text-xl font-bold whitespace-nowrap italic tracking-wide">
-              Development is in progress!
+              Next steps are ready!
             </p>
           </motion.div>
         </motion.div>

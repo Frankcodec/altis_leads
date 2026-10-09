@@ -18,7 +18,7 @@ const Navbar = () => {
   // Helper to determine link pathing
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Works', path: '/works' },
+    { name: 'Approach', path: '/works' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -59,7 +59,7 @@ const Navbar = () => {
                 ? "bg-neutral-900 text-white" 
                 : "bg-white text-neutral-900 shadow-lg"
             }`}>
-              Contact
+              Start a Conversation
               <div className={`rounded-full p-2 group-hover:rotate-45 transition-transform duration-300 ${
                 scrolled ? "bg-white text-black" : "bg-neutral-900 text-white"
               }`}>

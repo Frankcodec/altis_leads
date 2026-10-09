@@ -83,21 +83,14 @@ const Plans: React.FC = () => {
     };
   }, []);
 
-  // Generate random positions for floating dots
-  const floatingDots = React.useMemo(() => {
-    const dots = [];
-    for (let i = 0; i < 20; i++) {
-      dots.push({
-        id: i,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDuration: `${4 + Math.random() * 6}s`,
-        animationDelay: `${Math.random() * 5}s`,
-        size: `${2 + Math.random() * 3}px`,
-      });
-    }
-    return dots;
-  }, []);
+  const floatingDots = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    top: `${(i * 37) % 100}%`,
+    left: `${(i * 61) % 100}%`,
+    animationDuration: `${4 + (i % 7)}s`,
+    animationDelay: `${(i % 5)}s`,
+    size: `${2 + (i % 3)}px`,
+  }));
 
   const styles = {
     pricingContainer: {
@@ -432,31 +425,31 @@ const Plans: React.FC = () => {
       {/* Content Wrapper */}
       <div style={styles.contentWrapper}>
         <div style={styles.pricingHeader}>
-          <span style={styles.pricingLabel}>✦ Pricing</span>
-          <h1 style={styles.pricingTitle} className="pricing-title">Plans</h1>
+          <span style={styles.pricingLabel}>✦ Engagements</span>
+          <h1 style={styles.pricingTitle} className="pricing-title">Start With the Work You Need</h1>
           <p style={styles.pricingSubtitle} className="pricing-subtitle">
-            Whether you're uploading weekly or scaling fast, we've got a plan
+            Every business has a different customer-acquisition problem. We define a focused scope
             <br />
-            tailored to your content flow.
+            around the research, strategy, and support that will be most useful.
           </p>
         </div>
 
         <div style={styles.pricingCards} className="pricing-cards">
-          {/* Landing Page Plan */}
+          {/* Focused research engagement */}
           <div style={styles.pricingCard} className="pricing-card">
             <div style={styles.cardTopSection} className="card-top-section">
               <div style={styles.cardHeader}>
-                <h3 style={styles.planName} className="plan-name">Landing Page</h3>
+                <h3 style={styles.planName} className="plan-name">Market Research</h3>
               </div>
               <div style={styles.priceSection}>
-                <span style={styles.price} className="price">$1000</span>
-                <span style={styles.pricePeriod}>/one time payment</span>
+                <span style={styles.price} className="price">Scoped</span>
+                <span style={styles.pricePeriod}>to your business</span>
               </div>
-              <p style={styles.planDescription}>Convert visitors into leads or customers.</p>
+              <p style={styles.planDescription}>A clear starting point for finding the opportunities worth pursuing.</p>
               
               <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
                <button style={styles.ctaButton}>
-                Book a Call
+                Discuss Your Market
                 <span style={{
                   backgroundColor: '#ff5722',
                   borderRadius: '50%',
@@ -476,48 +469,48 @@ const Plans: React.FC = () => {
             </div>
 
             <div style={styles.cardBottomSection}>
-              <h4 style={styles.featuresTitle}>Features included:</h4>
+              <h4 style={styles.featuresTitle}>May include:</h4>
               <ul style={styles.featuresList}>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Single page</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Local market research</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>2 design concept</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Strong-fit prospect research</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Full copywriting</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Buying-trigger notes</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Framer development</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Prioritized opportunity list</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>1 month free support</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Recommended next steps</p>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Multi-Page Plan */}
+          {/* Customer-acquisition strategy engagement */}
           <div style={styles.pricingCard} className="pricing-card">
             <div style={styles.cardTopSection} className="card-top-section">
               <div style={styles.cardHeader}>
-                <h3 style={styles.planName} className="plan-name">Multi-Page</h3>
-                <span style={styles.popularBadge}>Popular</span>
+                <h3 style={styles.planName} className="plan-name">Outreach Strategy</h3>
+                <span style={styles.popularBadge}>Tailored</span>
               </div>
               <div style={styles.priceSection}>
-                <span style={styles.price} className="price">$1800</span>
-                <span style={styles.pricePeriod}>/one time payment</span>
+                <span style={styles.price} className="price">Scoped</span>
+                <span style={styles.pricePeriod}>to your needs</span>
               </div>
-              <p style={styles.planDescription}>Build trust, brand presence, and scalability.</p>
+              <p style={styles.planDescription}>For businesses that need an approach, not merely a list of names.</p>
 
               <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
               <button style={styles.ctaButton}>
-                Book a Call
+                Discuss Your Approach
                 <span style={{
                   backgroundColor: '#ff5722',
                   borderRadius: '50%',
@@ -537,27 +530,27 @@ const Plans: React.FC = () => {
             </div>
 
             <div style={styles.cardBottomSection}>
-              <h4 style={styles.featuresTitle}>Features included:</h4>
+              <h4 style={styles.featuresTitle}>May include:</h4>
               <ul style={styles.featuresList}>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Multiple Pages</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Decision-maker research</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>2-5 pages</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Relevant outreach angles</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Full copywriting</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Referral-source opportunities</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Framer development</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Follow-up planning</p>
                 </li>
                 <li style={styles.featuresListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>1 month free support</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Conversion-path recommendations</p>
                 </li>
               </ul>
             </div>
@@ -588,16 +581,16 @@ const Plans: React.FC = () => {
             <div style={styles.customCardTopSection} className="custom-card-top-section">
               <div style={styles.customPlanLeft}>
                 <div style={styles.cardHeader}>
-                  <h3 style={styles.customPlanName} className="plan-name">Custom Plan</h3>
+                  <h3 style={styles.customPlanName} className="plan-name">Custom Scope</h3>
                 </div>
                 <div style={styles.priceSection}>
-                  <span style={styles.customPrice} className="price">???</span>
-                  <span style={styles.customPricePeriod}>/one time payment</span>
+                  <span style={styles.customPrice} className="price">Let&apos;s talk</span>
+                  <span style={styles.customPricePeriod}>about the right scope</span>
                 </div>
-                <p style={styles.customPlanDescription}>Fully tailored digital experience.</p>
+                <p style={styles.customPlanDescription}>Built around the exact customer-acquisition work your business needs.</p>
                 <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
                   <button style={styles.ctaButtonWhite}>
-                  Book a Call
+                  Start a Conversation
                   <span style={{
                     backgroundColor: '#ff5722',
                     borderRadius: '50%',
@@ -618,27 +611,27 @@ const Plans: React.FC = () => {
             </div>
 
             <div style={{...styles.customPlanRight, paddingTop: '60px'}}>
-              <h4 style={styles.customFeaturesTitle}>Features included:</h4>
+              <h4 style={styles.customFeaturesTitle}>Could include:</h4>
               <ul style={styles.featuresList}>
                 <li style={styles.customFeaturesListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Multiple pages</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Deeper local-market research</p>
                 </li>
                 <li style={styles.customFeaturesListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>5+ pages</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Campaign and follow-up support</p>
                 </li>
                 <li style={styles.customFeaturesListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Full copywriting</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Referral relationship mapping</p>
                 </li>
                 <li style={styles.customFeaturesListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>Framer development</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Landing-page or booking-path planning</p>
                 </li>
                 <li style={styles.customFeaturesListItem}>
                   <span style={{color: '#ff5722'}}>✦</span>
-                  <p style={{paddingLeft: '12px', margin: 0}}>1 month free support</p>
+                  <p style={{paddingLeft: '12px', margin: 0}}>Ongoing opportunity review</p>
                 </li>
               </ul>
             </div>

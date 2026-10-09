@@ -82,21 +82,14 @@ const Plans: React.FC = () => {
     };
   }, []);
 
-  // Generate random positions for floating dots
-  const floatingDots = React.useMemo(() => {
-    const dots = [];
-    for (let i = 0; i < 20; i++) {
-      dots.push({
-        id: i,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        animationDuration: `${4 + Math.random() * 6}s`,
-        animationDelay: `${Math.random() * 5}s`,
-        size: `${2 + Math.random() * 3}px`,
-      });
-    }
-    return dots;
-  }, []);
+  const floatingDots = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    top: `${(i * 37) % 100}%`,
+    left: `${(i * 61) % 100}%`,
+    animationDuration: `${4 + (i % 7)}s`,
+    animationDelay: `${(i % 5)}s`,
+    size: `${2 + (i % 3)}px`,
+  }));
 
   const styles = {
     pricingContainer: {
@@ -394,31 +387,31 @@ const Plans: React.FC = () => {
           className="w-fit mx-auto flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-gray-300 bg-white/50 text-sm font-medium text-gray-600 mb-8"
         >
           <Star className="w-3 h-3 text-orange-500 fill-orange-500" />
-          <span className="tracking-tight">Plans</span>
+          <span className="tracking-tight">Engagements</span>
         </motion.div>
-        <h1 style={styles.pricingTitle} className="pricing-title">Simple Plans</h1>
+        <h1 style={styles.pricingTitle} className="pricing-title">Start With the Work You Need</h1>
         <p style={styles.pricingSubtitle} className="pricing-subtitle">
-          Whether you're uploading weekly or scaling fast, we've got a plan
+          Every business has a different customer-acquisition problem. We define a focused scope
           <br />
-          tailored to your content flow.
+          around the research, strategy, and support that will be most useful.
         </p>
       </div>
 
       <div style={styles.pricingCards} className="pricing-cards">
-        {/* Landing Page Plan */}
+        {/* Focused research engagement */}
         <div style={styles.pricingCard} className="pricing-card">
           <div style={styles.cardTopSection} className="card-top-section">
             <div style={styles.cardHeader}>
-              <h3 style={styles.planName} className="plan-name">Landing Page</h3>
+              <h3 style={styles.planName} className="plan-name">Market Research</h3>
             </div>
             <div style={styles.priceSection}>
-              <span style={styles.price} className="price">$1000</span>
-              <span style={styles.pricePeriod}>/one time payment</span>
+              <span style={styles.price} className="price">Scoped</span>
+              <span style={styles.pricePeriod}>to your business</span>
             </div>
-            <p style={styles.planDescription}>Convert visitors into leads or customers.</p>
+            <p style={styles.planDescription}>A clear starting point for finding the opportunities worth pursuing.</p>
             
             <button style={styles.ctaButton}>
-              Book a Call
+              Discuss Your Market
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -426,32 +419,32 @@ const Plans: React.FC = () => {
           </div>
 
           <div style={styles.cardBottomSection}>
-            <h4 style={styles.featuresTitle}>Features included:</h4>
+            <h4 style={styles.featuresTitle}>May include:</h4>
             <ul style={styles.featuresList}>
-              <li style={styles.featuresListItem}>✦ Single page</li>
-              <li style={styles.featuresListItem}>✦ 2 design concept</li>
-              <li style={styles.featuresListItem}>✦ Full copywriting</li>
-              <li style={styles.featuresListItem}>✦ Framer development</li>
-              <li style={styles.featuresListItem}>✦ 1 month free support</li>
+              <li style={styles.featuresListItem}>✦ Ideal-customer and service-area review</li>
+              <li style={styles.featuresListItem}>✦ Local market and prospect research</li>
+              <li style={styles.featuresListItem}>✦ Buying-trigger notes</li>
+              <li style={styles.featuresListItem}>✦ Prioritized opportunity list</li>
+              <li style={styles.featuresListItem}>✦ Clear recommended next steps</li>
             </ul>
           </div>
         </div>
 
-        {/* Multi-Page Plan */}
+        {/* Customer-acquisition strategy engagement */}
         <div style={styles.pricingCard} className="pricing-card">
           <div style={styles.cardTopSection} className="card-top-section">
             <div style={styles.cardHeader}>
-              <h3 style={styles.planName} className="plan-name">Multi-Page</h3>
-              <span style={styles.popularBadge}>Popular</span>
+              <h3 style={styles.planName} className="plan-name">Customer-Acquisition Strategy</h3>
+              <span style={styles.popularBadge}>Tailored</span>
             </div>
             <div style={styles.priceSection}>
-              <span style={styles.price} className="price">$1800</span>
-              <span style={styles.pricePeriod}>/one time payment</span>
+              <span style={styles.price} className="price">Scoped</span>
+              <span style={styles.pricePeriod}>to your needs</span>
             </div>
-            <p style={styles.planDescription}>Build trust, brand presence, and scalability.</p>
+            <p style={styles.planDescription}>For businesses that need an approach, not merely a list of names.</p>
             
             <button style={styles.ctaButton}>
-              Book a Call
+              Discuss Your Approach
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -459,13 +452,13 @@ const Plans: React.FC = () => {
           </div>
 
           <div style={styles.cardBottomSection}>
-            <h4 style={styles.featuresTitle}>Features included:</h4>
+            <h4 style={styles.featuresTitle}>May include:</h4>
             <ul style={styles.featuresList}>
-              <li style={styles.featuresListItem}>✦ Multiple Pages</li>
-              <li style={styles.featuresListItem}>✦ 2-5 pages</li>
-              <li style={styles.featuresListItem}>✦ Full copywriting</li>
-              <li style={styles.featuresListItem}>✦ Framer development</li>
-              <li style={styles.featuresListItem}>✦ 1 month free support</li>
+              <li style={styles.featuresListItem}>✦ Prospect and decision-maker research</li>
+              <li style={styles.featuresListItem}>✦ Messaging and outreach angles</li>
+              <li style={styles.featuresListItem}>✦ Referral-source opportunities</li>
+              <li style={styles.featuresListItem}>✦ Follow-up plan</li>
+              <li style={styles.featuresListItem}>✦ Optional conversion-path recommendations</li>
             </ul>
           </div>
         </div>
@@ -493,15 +486,15 @@ const Plans: React.FC = () => {
 
         <div style={styles.customPlanContent} className="custom-plan-content">
           <div style={styles.customPlanLeft}>
-            <h3 style={styles.customPlanName}>Custom Plan</h3>
+            <h3 style={styles.customPlanName}>Custom Scope</h3>
             <div style={styles.priceSection}>
-              <span style={styles.customPrice} className="price">???</span>
-              <span style={styles.customPricePeriod}>/one time payment</span>
+              <span style={styles.customPrice} className="price">Let&apos;s talk</span>
+              <span style={styles.customPricePeriod}>about the right scope</span>
             </div>
-            <p style={styles.customPlanDescription}>Fully tailored digital experience.</p>
+            <p style={styles.customPlanDescription}>Built around the exact customer-acquisition work your business needs.</p>
             
             <button style={styles.ctaButtonWhite}>
-              Book a Call
+              Start a Conversation
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -509,13 +502,13 @@ const Plans: React.FC = () => {
           </div>
 
           <div style={styles.customPlanRight}>
-            <h4 style={styles.customFeaturesTitle}>Features included:</h4>
+            <h4 style={styles.customFeaturesTitle}>Could include:</h4>
             <ul style={styles.featuresList}>
-              <li style={styles.customFeaturesListItem}>✦ Multiple pages</li>
-              <li style={styles.customFeaturesListItem}>✦ 5+ pages</li>
-              <li style={styles.customFeaturesListItem}>✦ Full copywriting</li>
-              <li style={styles.customFeaturesListItem}>✦ Framer development</li>
-              <li style={styles.customFeaturesListItem}>✦ 1 month free support</li>
+              <li style={styles.customFeaturesListItem}>✦ Deeper local-market research</li>
+              <li style={styles.customFeaturesListItem}>✦ Campaign and follow-up support</li>
+              <li style={styles.customFeaturesListItem}>✦ Referral relationship mapping</li>
+              <li style={styles.customFeaturesListItem}>✦ Landing page or booking-path planning</li>
+              <li style={styles.customFeaturesListItem}>✦ Ongoing opportunity review</li>
             </ul>
           </div>
         </div>

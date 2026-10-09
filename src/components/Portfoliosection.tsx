@@ -3,22 +3,22 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Sparkles, ArrowUpRight } from 'lucide-react';
 
 const SERVICE_TAGS = [
-  "Multi-Page Website Design", "UI/UX Design", "Brand-Focused Interfaces", 
-  "Responsive & Modern Design", "Fast Delivery", "Design Systems"
+  "Local Market Research", "Prospect Prioritization", "Buying Triggers",
+  "Outreach Angles", "Referral Sources", "Follow-up Planning"
 ];
 
 const ROW_1 = [
-  { id: 1, title: "Vandal", image: "/1.png", color: "bg-[#F3F3F3]" },
-  { id: 2, title: "Soma", image: "/2.png", color: "bg-[#F1E9FF]" },
-  { id: 3, title: "Flowstate", image: "/3.png", color: "bg-[#111111]" },
-  { id: 4, title: "Vantige", image: "/4.png", color: "bg-[#2ABEB1]" },
+  { id: 1, title: "Home Services", image: "/1.png", color: "bg-[#F3F3F3]" },
+  { id: 2, title: "Property Care", image: "/2.png", color: "bg-[#F1E9FF]" },
+  { id: 3, title: "Food & Hospitality", image: "/3.png", color: "bg-[#111111]" },
+  { id: 4, title: "Professional Services", image: "/4.png", color: "bg-[#2ABEB1]" },
 ];
 
 const ROW_2 = [
-  { id: 5, title: "Biology", image: "/5.png", color: "bg-[#1A1A1A]" },
-  { id: 6, title: "Bearcoin", image: "/6.png", color: "bg-[#FFEFD6]" },
-  { id: 7, title: "Neural", image: "/7.png", color: "bg-zinc-800" },
-  { id: 8, title: "Architecture", image: "/8.png", color: "bg-teal-50" },
+  { id: 5, title: "Contractors", image: "/5.png", color: "bg-[#1A1A1A]" },
+  { id: 6, title: "Local Retail", image: "/6.png", color: "bg-[#FFEFD6]" },
+  { id: 7, title: "Marine & Dock", image: "/7.png", color: "bg-zinc-800" },
+  { id: 8, title: "Real Estate", image: "/8.png", color: "bg-teal-50" },
 ];
 
 const ProjectCard = ({ project }: { project: typeof ROW_1[0] }) => (
@@ -26,7 +26,7 @@ const ProjectCard = ({ project }: { project: typeof ROW_1[0] }) => (
     <div className={`relative aspect-[16/11] rounded-[20px] md:rounded-[32px] overflow-hidden ${project.color} shadow-sm transition-all duration-500`}>
       <img 
         src={project.image} 
-        alt={project.title} 
+        alt={`Illustrative opportunity area for ${project.title}`}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
       />
       <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -38,7 +38,7 @@ const ProjectCard = ({ project }: { project: typeof ROW_1[0] }) => (
     <div className="mt-3 md:mt-6 flex justify-between items-center px-1">
       <h3 className="text-sm md:text-xl font-bold text-neutral-900 uppercase tracking-tighter">{project.title}</h3>
       <span className="hidden sm:block text-[10px] font-bold text-gray-400 uppercase tracking-widest border border-gray-100 px-3 py-1 rounded-full">
-        Case Study
+        Opportunity Area
       </span>
     </div>
   </div>

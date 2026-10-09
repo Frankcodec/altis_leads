@@ -8,26 +8,26 @@ import { Star } from 'lucide-react';
 const STEPS = [
   {
     number: "01",
-    title: "Discovery",
-    description: "We start by understanding your goals, audience, and vision. This allows us to define a clear direction before any design or development begins.",
+    title: "Understand the business",
+    description: "We get clear on the services you want to sell, the customers you want to reach, and the locations that matter to your business.",
     component: <IntegrationPipeline />
   },
   {
     number: "02",
-    title: "Design",
-    description: "We craft thoughtful, modern designs focused on clarity, usability, and visual impact — tailored to your brand.",
+    title: "Find relevant opportunities",
+    description: "We research the local market, identify promising prospects, and look for the situations that could make your service timely or useful.",
     component: <DesignCard />
   },
   {
     number: "03",
-    title: "Development",
-    description: "We bring the designs to life with clean, scalable code, ensuring performance, responsiveness, and reliability across all devices.",
+    title: "Build the approach",
+    description: "We prioritize the opportunities and develop messaging angles, outreach ideas, and a clear order of operations for your next moves.",
     component: <DevStatusComponent />
   },
   {
     number: "04",
-    title: "Launch & Support",
-    description: "We handle a smooth, stress-free launch, ensuring everything works perfectly across devices and platforms.",
+    title: "Turn research into conversations",
+    description: "Depending on your needs, we can support follow-ups, referral outreach, or a simple conversion path that helps interested prospects inquire or book.",
     component: <LaunchSupportCard />
   }
 ];
@@ -54,14 +54,14 @@ const ProcessSection = () => {
   className="w-fit mx-auto flex items-center gap-2 px-4 py-2 rounded-full border border-dashed border-gray-300 bg-white/50 text-sm font-medium text-gray-600 mb-8"
 >
   <Star className="w-3 h-3 text-orange-500 fill-orange-500" />
-  <span className="tracking-tight">Plans</span>
+  <span className="tracking-tight">The Process</span>
 </motion.div>
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6 tracking-tight">
-            How It Works?
+            A More Deliberate Way to Find Customers
           </h2>
           <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto">
-            A quick overview of how we work together to make your edit best in class!
+            Each engagement is shaped around your customer-acquisition problem, but the work usually follows this practical sequence.
           </p>
         </div>
 

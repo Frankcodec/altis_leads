@@ -9,40 +9,34 @@ interface Particle {
   opacity: number;
 }
 
-interface Review {
-  username: string;
-  avatarUrl: string;
+interface Situation {
+  title: string;
   text: string;
 }
 
 const ReviewsSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const reviews: Review[] = [
+  const situations: Situation[] = [
     {
-      username: '@mark_locus',
-      avatarUrl: 'https://i.pravatar.cc/150?img=12',
-      text: "Altis has an incredible eye for motion. They took our static brand guidelines and turned them into a living, breathing digital experience. The way the elements interact as you scroll is pure magic—it's the best our brand has ever looked."
+      title: 'You know your work is valuable, but your next buyer is unclear.',
+      text: 'Use local research to identify the businesses, property owners, organizations, or people who are more likely to need what you offer.'
     },
     {
-      username: '@tonya.sa',
-      avatarUrl: 'https://i.pravatar.cc/150?img=33',
-      text: "Most designers shy away from the technical side of Framer, but Altis thrives there. They built a custom CMS for our blog and integrated our complex tracking scripts without a hitch. Fast, clean, and zero bugs. Highly recommended."
+      title: 'Most growth has come from referrals or chance discovery.',
+      text: 'Build a focused prospecting approach alongside the channels that already work, without pretending social posts alone will solve the problem.'
     },
     {
-      username: '@johnbai',
-      avatarUrl: 'https://i.pravatar.cc/150?img=15',
-      text: "I was worried a site this visual would be slow, but Altis optimized everything to perfection. Our load times are lightning-fast, and the mobile responsiveness is the best I've seen. They really understand the 'web' part of web design."
+      title: 'You have names, but no reason to contact them now.',
+      text: 'Look for relevant buying triggers and practical messaging angles so outreach has a clear reason to exist.'
     },
     {
-      username: '@chrismaw',
-      avatarUrl: 'https://i.pravatar.cc/150?img=68',
-      text: "We had a hard launch deadline for our seed round and Altis delivered a high-fidelity landing page in record time. They didn't just meet the deadline; they exceeded our expectations on the design front too. A total lifesaver."
+      title: 'The strongest opportunities get lost in a long, unorganized list.',
+      text: 'Prioritize prospects by fit and timing, then define a workable next step and follow-up sequence.'
     },
     {
-      username: '@jemmy',
-      avatarUrl: 'https://i.pravatar.cc/150?img=52',
-      text: "Altis is our go-to for anything Framer. Their communication is clear, their process is organized, and they always find a creative solution to our 'can we do this?' questions. If you're looking for a top-tier partner, look no further."
+      title: 'Interested prospects are not turning into inquiries.',
+      text: 'When appropriate, clarify the handoff with a simple landing page or booking path that makes it easier for people to take action.'
     }
   ];
 
@@ -121,13 +115,13 @@ const ReviewsSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="text-[#FF6B35]">✦</span>Reviews
+            <span className="text-[#FF6B35]">✦</span>Practical Fit
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            Loved by Creators
+            Built for the Work That Happens Before a Sale
           </h2>
           <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
-            We don't just deliver edits — we make creators look good, grow faster, and stay consistent.
+            These are common customer-acquisition problems the process is designed to help you work through. They are not promises of a particular result.
           </p>
         </div>
 
@@ -136,22 +130,18 @@ const ReviewsSection: React.FC = () => {
           {/* Left Column - Reviews with Stacking Effect */}
           <div className="relative">
             <div className="flex flex-col gap-0">
-              {reviews.map((review, index) => (
+              {situations.map((situation, index) => (
                 <div
                   key={index}
                   className="sticky bg-white rounded-xl p-5 md:p-6 border border-gray-100 hover:border-gray-200 transition-all duration-300 mb-4 shadow-sm"
                   style={{ top: `${index * 24 + 32}px` }}
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <img 
-                      src={review.avatarUrl} 
-                      alt={review.username}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
-                    <span className="text-sm font-medium text-gray-700">{review.username}</span>
+                    <span className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-50 text-orange-500 font-semibold">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-sm font-medium text-gray-700">{situation.title}</span>
                   </div>
                   <p className="text-gray-800 text-sm md:text-base leading-relaxed">
-                    {review.text}
+                    {situation.text}
                   </p>
                 </div>
               ))}
@@ -177,14 +167,14 @@ const ReviewsSection: React.FC = () => {
 
                 {/* Heading */}
                 <h3 className="text-white text-2xl md:text-3xl font-bold mb-6 leading-tight">
-                  Book a 15-min intro call
+                  Start with a focused 15-minute conversation
                 </h3>
 
                 {/* CTA Button */}
                 <a href="https://cal.com/altis-studios-nspiml/15min" target="_blank" rel="noopener noreferrer">
 
                 <button className="group flex items-center gap-2.5 bg-white hover:bg-gray-100 text-black text-base font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl mb-8">
-                  Book a Call
+                  Start a Conversation
                   <span className="flex items-center justify-center w-8 h-8 bg-[#FF5100] rounded-full transition-transform group-hover:translate-x-1">
                     <svg 
                       className="w-4 h-4 text-white" 
@@ -207,7 +197,7 @@ const ReviewsSection: React.FC = () => {
 
                 {/* Email */}
                 <div className="mb-6">
-                  <p className="text-gray-400 text-sm mb-1">Prefer to Email?</p>
+                  <p className="text-gray-400 text-sm mb-1">Prefer email?</p>
                   <a
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=altis.studios01@gmail.com"
                     target="_blank"
@@ -221,13 +211,13 @@ const ReviewsSection: React.FC = () => {
                 {/* Tags */}
                 <div className="flex flex-wrap items-center justify-center gap-2">
                   <span className="px-3 py-1.5 bg-white/10 text-gray-300 text-xs rounded-full backdrop-blur-sm">
-                    Collaboration
+                    Local research
                   </span>
                   <span className="px-3 py-1.5 bg-white/10 text-gray-300 text-xs rounded-full backdrop-blur-sm">
-                    Business Inquiry
+                    Prospect strategy
                   </span>
                   <span className="px-3 py-1.5 bg-white/10 text-gray-300 text-xs rounded-full backdrop-blur-sm">
-                    Went
+                    Practical next steps
                   </span>
                 </div>
               </div>

@@ -1,42 +1,39 @@
 import { motion } from 'framer-motion';
-import { 
-  ArrowUpRight, Zap, MousePointerClick, Layout, ShieldCheck, Smartphone, Monitor, Activity, Star
-} from 'lucide-react';
+import { ArrowUpRight, Search, MapPinned, MessageSquare, ListChecks, Star } from 'lucide-react';
 
 const SERVICES = [
   {
-    title: "Landing Page Design",
-    description: "We create high-converting landing pages that engage visitors, highlight your value, and drive action. Every page is designed for clarity, impact, and results.",
+    title: "Local Opportunity Research",
+    description: "We look at the services you want to sell, the area you serve, and the kinds of organizations or people most likely to need them. The result is a focused view of where worthwhile conversations could begin.",
     tags: [
-      { label: "High-Conversion", icon: <ArrowUpRight className="w-3.5 h-3.5" /> },
-      { label: "Fast Loading", icon: <Zap className="w-3.5 h-3.5" /> },
-      { label: "Strong CTA", icon: <MousePointerClick className="w-3.5 h-3.5" /> }
+      { label: "Local focus", icon: <MapPinned className="w-3.5 h-3.5" /> },
+      { label: "Relevant prospects", icon: <Search className="w-3.5 h-3.5" /> },
+      { label: "Realistic fit", icon: <ArrowUpRight className="w-3.5 h-3.5" /> }
     ],
     className: "lg:col-span-7" // Larger width
   },
   {
-    title: "Multi-Page Website Design",
-    description: "From small business sites to complex multi-page platforms, we design modern websites that reflect your brand and scale with your goals.",
+    title: "Prospect Prioritization",
+    description: "A long list is not a plan. We organize the strongest opportunities, identify available contact details and decision-makers, and note the reasons each prospect may be worth approaching.",
     tags: [
-      { label: "Brand-Focused", icon: <Layout className="w-3.5 h-3.5" /> }
+      { label: "Clear priorities", icon: <ListChecks className="w-3.5 h-3.5" /> }
     ],
     className: "lg:col-span-5" // Smaller width
   },
   {
-    title: "Full-Stack Web Development",
-    description: "At Altis, we combine design with solid engineering. As full-stack web developers, we build websites that are not only visually refined but also fast, scalable, and reliable.",
+    title: "Outreach Strategy",
+    description: "We turn research into a useful approach: tailored messaging angles, potential buying triggers, referral sources, and follow-up steps that match the way your business actually sells.",
     tags: [
-      { label: "Secure Backend", icon: <ShieldCheck className="w-3.5 h-3.5" /> }
+      { label: "Practical messaging", icon: <MessageSquare className="w-3.5 h-3.5" /> }
     ],
     className: "lg:col-span-5" // Smaller width
   },
   {
-    title: "App Development",
-    description: "One video, 10 pieces of content — cut into Shorts, Reels, quote cards, and teasers. Perfect for creators who want to stay visible everywhere.",
+    title: "Conversion Support",
+    description: "When it fits the problem, the work can extend to follow-up planning or a simple landing page and booking path. The scope is shaped around what will help your next conversations move forward.",
     tags: [
-      { label: "Intuitive UI", icon: <Smartphone className="w-3.5 h-3.5" /> },
-      { label: "Cross-Platform", icon: <Monitor className="w-3.5 h-3.5" /> },
-      { label: "Smooth Performance", icon: <Activity className="w-3.5 h-3.5" /> }
+      { label: "Follow-up plan", icon: <ListChecks className="w-3.5 h-3.5" /> },
+      { label: "Optional funnel", icon: <ArrowUpRight className="w-3.5 h-3.5" /> }
     ],
     className: "lg:col-span-7" // Larger width
   }
@@ -69,10 +66,10 @@ const ServicesSection = () => {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-6 tracking-tight">
-            What We Offer
+            Customer Acquisition, Built Around Your Business
           </h2>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed">
-            At Altis, we craft high-performing websites, landing pages, and UI/UX designs tailored for founders and companies.
+            The work is not a fixed marketing package. We focus on the research, priorities, and practical next steps that make sense for your customers and market.
           </p>
         </div>
 

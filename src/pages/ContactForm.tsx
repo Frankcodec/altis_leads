@@ -102,12 +102,12 @@ const ContactForm: React.FC = () => {
       </div>
       
       <h1 className="max-w-[840px] mx-auto mb-6 text-[48px] md:text-[72px] font-bold leading-[1.1] text-[#1a1a1a] tracking-[-1.5px]">
-        Start Your <span className="text-[#ff5722]">Next<br />Project</span> With Us
+        Start Finding <span className="text-[#ff5722]">Better<br />Opportunities</span>
       </h1>
       
       <p className="max-w-[840px] mx-auto mb-16 text-[16px] md:text-[18px] leading-[1.6] text-[#4a4a4a] font-normal">
-        Got a project in mind or just want to say hi? Fill out the form and we'll<br />
-        get back to you shortly.
+        Tell us a little about your business and the customers you want to reach. We&apos;ll<br />
+        use it to start a useful conversation.
       </p>
 
       <form className="max-w-[840px] mx-auto bg-white rounded-2xl px-6 md:px-14 py-8 md:py-12 shadow-sm" onSubmit={handleSubmit}>
@@ -143,7 +143,7 @@ const ContactForm: React.FC = () => {
             type="email"
             id="email"
             name="email"
-            placeholder="jane@framer.com"
+            placeholder="jane@yourbusiness.com"
             value={formData.email}
             onChange={handleInputChange}
             className="w-full px-[18px] py-4 text-[15px] text-[#1a1a1a] bg-[#fafafa] border border-[#f0f0f0] rounded-lg outline-none transition-all duration-200 placeholder:text-[#b8b8b8] focus:bg-white focus:border-[#e0e0e0]"
@@ -152,7 +152,7 @@ const ContactForm: React.FC = () => {
 
         <div className="mb-8">
           <label htmlFor="projectType" className="block text-[15px] font-medium text-[#1a1a1a] mb-3 tracking-wide">
-            Project Type
+            Business Type
           </label>
           <div className="relative">
             <select
@@ -166,11 +166,11 @@ const ContactForm: React.FC = () => {
               }}
             >
               <option value="">Select...</option>
-              <option value="web-design">Web Design</option>
-              <option value="web-development">Web Development</option>
-              <option value="mobile-app">Mobile App</option>
-              <option value="branding">Branding</option>
-              <option value="other">Other</option>
+              <option value="home-services">Home services or contractor</option>
+              <option value="property">Property or real estate</option>
+              <option value="food">Restaurant, bakery, or food business</option>
+              <option value="professional-services">Professional services</option>
+              <option value="other">Other local business</option>
             </select>
             <div className="absolute right-[18px] top-1/2 -translate-y-1/2 pointer-events-none">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -182,7 +182,7 @@ const ContactForm: React.FC = () => {
 
         <div className="mb-8">
           <label htmlFor="budget" className="block text-[15px] font-medium text-[#1a1a1a] mb-3 tracking-wide">
-            Budget
+            Service Area
           </label>
           <div className="relative">
             <select
@@ -196,11 +196,11 @@ const ContactForm: React.FC = () => {
               }}
             >
               <option value="">Select...</option>
-              <option value="under-5k">Under $5,000</option>
-              <option value="5k-10k">$5,000 - $10,000</option>
-              <option value="10k-25k">$10,000 - $25,000</option>
-              <option value="25k-50k">$25,000 - $50,000</option>
-              <option value="50k-plus">$50,000+</option>
+              <option value="one-town">One town or neighborhood</option>
+              <option value="local-area">A local area or county</option>
+              <option value="multiple-locations">Multiple local locations</option>
+              <option value="regional">A wider regional area</option>
+              <option value="not-sure">Not sure yet</option>
             </select>
             <div className="absolute right-[18px] top-1/2 -translate-y-1/2 pointer-events-none">
               <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -212,12 +212,12 @@ const ContactForm: React.FC = () => {
 
         <div className="mb-8">
           <label htmlFor="message" className="block text-[15px] font-medium text-[#1a1a1a] mb-3 tracking-wide">
-            Drop a Message
+            Your Customer-Acquisition Challenge
           </label>
           <textarea
             id="message"
             name="message"
-            placeholder="Write about your project"
+            placeholder="What do you offer, who would you like to reach, and what has made finding customers difficult?"
             value={formData.message}
             onChange={handleInputChange}
             rows={5}
@@ -230,7 +230,7 @@ const ContactForm: React.FC = () => {
           disabled={isSubmitting}
           className="w-full px-[18px] py-[18px] text-base font-medium text-white bg-[#1a1a1a] border-none rounded-lg cursor-pointer transition-colors duration-200 tracking-wide mt-2 hover:bg-[#2d2d2d] active:bg-[#0a0a0a] disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Submitting...' : 'Submit'}
+          {isSubmitting ? 'Submitting...' : 'Start the Conversation'}
         </button>
       </form>
     </div>

@@ -26,7 +26,7 @@ const WorksHeader = () => {
           className="flex items-center gap-2 w-fit px-4 py-2 rounded-full border border-dashed border-gray-300 bg-white shadow-sm text-sm font-medium text-gray-600 mb-8"
         >
           <Plus className="w-3.5 h-3.5 text-orange-500" />
-          <span className="tracking-tight">Selected Works</span>
+          <span className="tracking-tight">Where This Fits</span>
         </motion.div>
 
         {/* 3. Main Title & Description */}
@@ -38,8 +38,8 @@ const WorksHeader = () => {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-8xl font-bold text-neutral-900 leading-[0.95] tracking-tighter mb-8"
           >
-            Our Recent Work <br />
-            <span className="text-orange-500 italic">in Action</span>
+            Find Opportunities <br />
+            <span className="text-orange-500 italic">Before They Find You</span>
           </motion.h2>
 
           <motion.p 
@@ -49,7 +49,7 @@ const WorksHeader = () => {
             transition={{ delay: 0.2 }}
             className="text-gray-500 text-lg md:text-2xl max-w-2xl leading-relaxed"
           >
-            From tech reviews to gameplay breakdowns — here’s a glimpse of how we turn raw footage into binge-worthy content that resonates.
+            A practical customer-acquisition process for local businesses that want to identify strong-fit prospects and approach them with more purpose.
           </motion.p>
         </div>
       </div>
